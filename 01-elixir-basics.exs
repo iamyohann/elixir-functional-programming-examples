@@ -68,7 +68,6 @@ add = fn a, b -> a + b end
 
 IO.puts add.(1, 2)
 
-
 # Composition
 a = fn x -> x + 2 end
 b = fn x -> x * 3 end
