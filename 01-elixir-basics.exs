@@ -64,3 +64,28 @@ IO.puts String.upcase "uppercase"
 IO.puts String.downcase "LOWERCASE"
 
 # Anonymous functions
+add = fn a, b -> a + b end
+
+IO.puts add.(1, 2)
+
+
+# Composition
+a = fn x -> x + 2 end
+b = fn x -> x * 3 end
+c = fn a, b, x -> b.(a.(x)) end
+
+# b ∘ a (b after a)
+IO.puts b.(a.(2)) == c.(a, b, 2)
+
+# Identity functions
+i = fn f -> f end
+
+# Identity of A
+iA = i.(a)
+
+IO.puts a.(5) == iA.(5)
+
+# Identity of C
+iC = i.(c)
+
+IO.puts c.(a, b, 2) == iC.(a, b, 2)
