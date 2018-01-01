@@ -88,3 +88,17 @@ IO.puts a.(5) == iA.(5)
 iC = i.(c)
 
 IO.puts c.(a, b, 2) == iC.(a, b, 2)
+
+# More on lists
+
+# concat lists
+lcat = [1, 2, 3] ++ [4, 5, 6]
+
+# subtract (lsub = [1, 2, 3, true])
+lsub = [1, 2, 3, true, true, false] -- [true, false]
+
+# Immutability: Elixir structures are immutable
+
+# head / tail of list
+hd [1, 2, 3] # 1
+tl [1, 2, 3, :four] #[2, 3, :four]
